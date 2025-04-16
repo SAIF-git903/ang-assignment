@@ -1,0 +1,15 @@
+@import "../../../assets/scss/style.scss";
+
+:host {
+  display: block;
+  width: 100%;
+  height: fit-content;
+  padding: 40px 0 25px;
+
+  h1 {
+    @include common-typography-h1;
+    color: var(--Primary-black, #0a0a0a);
+    margin: 0;
+    padding: 0;
+  }
+}

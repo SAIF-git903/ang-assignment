@@ -1,0 +1,188 @@
+@import "../../../assets/scss/style.scss";
+
+:host {
+  display: block;
+  width: fit-content;
+  height: 100%;
+
+  .right-sidebar-main {
+    min-width: 456px;
+    height: 100%;
+
+    display: flex;
+    width: 456px;
+    padding: 40px 22px 20px 22px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 25px;
+    background: var(--White, #fff);
+
+    .head {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      align-self: stretch;
+
+      .chatbot-icon-wrapper {
+        display: flex;
+        width: 30px;
+        height: 30px;
+        padding: 3.743px 2.647px 3.257px 3px;
+        justify-content: center;
+        align-items: center;
+        aspect-ratio: 1/1;
+      }
+    }
+
+    .chatlist {
+      flex: 1;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      //   align-items: flex-start;
+      gap: 12px;
+      align-self: stretch;
+      min-height: 100px;
+
+      .msg-container {
+        width: fit-content;
+        display: flex;
+        align-items: flex-end;
+        flex-direction: row;
+        align-self: flex-start;
+
+        &.self {
+          align-self: flex-end;
+          flex-direction: row-reverse;
+
+          .msg-content {
+            @include common-typography-paragraphs;
+            color: var(--logo-paragraph, #292929);
+            border-radius: 8px 8px 0px 8px;
+            background: #c3ffe7;
+          }
+
+          &::before {
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8" fill="none"><path d="M8 8H0V0C2.03712 4.49005 3.90069 6.10107 8 8Z" fill="%23C3FFE7"/></svg>');
+          }
+        }
+
+        .msg-content {
+          display: flex;
+          padding: 8px 12px;
+          justify-content: center;
+          align-items: center;
+          gap: 10px;
+          flex: 1 0 0;
+          border-radius: 8px 8px 8px 0px;
+          background: #f2f2f2;
+        }
+
+        &::before {
+          --w: 10px;
+          --h: 10px;
+          height: var(--h);
+          width: var(--w);
+          min-height: var(--h);
+          min-width: var(--w);
+          max-height: var(--h);
+          max-width: var(--w);
+          content: "";
+          display: block;
+          background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8" fill="none"><path d="M0 8H8V0C5.96288 4.49005 4.09931 6.10107 0 8Z" fill="%23F2F2F2"/></svg>');
+          background-size: cover;
+        }
+      }
+    }
+
+    .controls {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+      align-self: stretch;
+
+      .suggestions-list {
+        max-width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+        align-items: center;
+
+        .list {
+          display: flex;
+          justify-content: flex-start;
+          flex-wrap: nowrap;
+          align-items: center;
+          overflow-x: auto;
+          gap: 8px;
+          min-width: 50px;
+
+          &::-webkit-scrollbar {
+            display: none;
+          }
+
+          .suggestion-item {
+            @include common-typography-small-text;
+            display: flex;
+            padding: 4px 8px;
+            align-items: center;
+            gap: 4px;
+            color: var(--Primary-black, #0a0a0a);
+            border-radius: 12px;
+            background: var(--Yellow, #f4d06f);
+            text-wrap: nowrap;
+            /* Tab shadow */
+            box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.1);
+          }
+        }
+
+        .scroll-next {
+          display: flex;
+          width: 25px;
+          justify-content: center;
+          align-items: center;
+          gap: 10px;
+          align-self: stretch;
+          aspect-ratio: 1/1;
+        }
+      }
+
+      .chat-input {
+        color: var(--logo-paragraph, #292929);
+        width: 100%;
+        min-width: 100%;
+        max-width: 100%;
+        height: 80px;
+        min-height: 80px !important;
+        max-height: 80px;
+        border-radius: 8px;
+        border: none !important;
+        padding: 12px;
+        background: var(--Background, #fafafa);
+        position: relative;
+        resize: none;
+        @include common-typography-paragraphs;
+
+        &::placeholder {
+          color: var(--placeholders-light-text, #666);
+          @include common-typography-paragraphs;
+        }
+      }
+
+      .send-chat-btn {
+        display: flex;
+        padding: 8px;
+        align-items: center;
+        gap: 12px;
+        border-radius: 8px;
+        background: var(--Primary-black, #0a0a0a);
+        /* Tab shadow */
+        box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.1);
+        position: absolute;
+        bottom: 12px;
+        right: 12px;
+      }
+    }
+  }
+}

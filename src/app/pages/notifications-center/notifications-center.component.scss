@@ -1,0 +1,171 @@
+@import "../../../assets/scss/style.scss";
+
+.employer-msg-card {
+  display: flex;
+  padding: 16px;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  gap: 20px;
+  align-self: stretch;
+  border-radius: 16px;
+  background: var(--White, #fff);
+
+  /* Card Shadow */
+  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.1);
+  margin-top: 14px;
+
+  .profile-img-container {
+    display: flex;
+    width: 46px;
+    height: 46px;
+    padding: 10px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    aspect-ratio: 1/1;
+
+    border-radius: 12px;
+    background: var(--White, #fff);
+    box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.card-view-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    
+  .job-item {
+    display: flex;
+    padding: 16px;
+    justify-content: flex-start;
+    align-self: stretch;
+    border-radius: 16px;
+    background: var(--White, #fff);
+    width: 100%;
+    flex-direction: column;
+    /* Card Shadow */
+    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.1);
+
+    .head {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      align-self: stretch;
+
+      .logo-info {
+        display: flex;
+        align-items: flex-start;
+        gap: 14px;
+        flex: 1 0 0;
+
+        .logo {
+          display: flex;
+          width: 90px;
+          height: 90px;
+          padding: 10px;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          gap: 10px;
+          aspect-ratio: 1/1;
+          border-radius: 12px;
+          background: var(--White, #fff);
+          box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.1);
+        }
+
+        .info {
+          .stats-list {
+            display: flex;
+            align-items: flex-start;
+            align-content: flex-start;
+            gap: 8px;
+            align-self: stretch;
+            flex-wrap: wrap;
+
+            .stat {
+              display: flex;
+              padding: 4px 8px;
+              align-items: center;
+              gap: 4px;
+              border-radius: 12px;
+              background: var(--Background, #fafafa);
+              color: var(--logo-paragraph, #292929);
+              @include common-typography-small-text;
+            }
+          }
+        }
+      }
+
+      .progress-container {
+        padding: 16px;
+        .progress-cirle {
+          width: 44px;
+          height: 44px;
+          position: relative;
+
+          .progress-text {
+            position: absolute;
+            width: 26px;
+            height: 26px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2px;
+            flex-direction: column;
+            top: calc(50% - 13px);
+            left: calc(50% - 13px);
+          }
+        }
+      }
+    }
+
+    hr {
+      background: var(--stroke, #e2e8f0);
+      margin-block: 12px;
+      opacity: 1;
+    }
+
+    .actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      gap: 12px;
+
+      .bookmark {
+        display: flex;
+        padding: 8px 12px;
+        justify-content: center;
+        align-items: center;
+        border-radius: 16px;
+        background: var(--Background, #fafafa);
+      }
+    }
+  }
+}
+
+.tabular-view-list {
+  overflow-x: auto;
+  padding-bottom: 10px;
+
+  .progress-cirle {
+    width: 44px;
+    height: 44px;
+    position: relative;
+
+    .progress-text {
+      position: absolute;
+      width: 26px;
+      height: 26px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2px;
+      flex-direction: column;
+      top: calc(50% - 13px);
+      left: calc(50% - 13px);
+    }
+  }
+}
